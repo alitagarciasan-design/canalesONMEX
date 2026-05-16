@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Canales de Atención ONMEX</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#f5f7fa;font-family:'Inter','Helvetica Neue',sans-serif;min-height:100vh;padding-bottom:60px;}
+  .hero{background:#fff;padding:40px 32px 44px;text-align:center;}
+  .logo-wrap{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:28px;}
+  .logo-text-main{font-size:40px;font-weight:900;color:#1a2035;line-height:1;letter-spacing:-2.5px;}
+  .logo-text-sub{font-size:11px;font-weight:700;color:#1a2035;letter-spacing:7px;text-transform:uppercase;opacity:.5;margin-top:3px;}
+  h1{font-size:34px;font-weight:900;color:#111a29;line-height:1.05;text-transform:uppercase;letter-spacing:-1px;margin:0 0 10px;}
+  h1 span{color:#0056f3;}
+  .subtitle{font-size:13px;font-weight:600;color:#888;}
+  .accent-bar{height:5px;background:linear-gradient(90deg,#0056f3,#49e3e7);}
+  .container{max-width:480px;margin:0 auto;padding:28px 20px 0;}
+  .section-label{font-size:9px;font-weight:900;color:#aaa;text-transform:uppercase;letter-spacing:4px;margin-bottom:12px;text-align:center;}
+  .section{margin-bottom:32px;}
+  .card{display:flex;align-items:center;background:#fff;border-radius:18px;padding:16px 20px;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,.07);border:1.5px solid #eef0f5;margin-bottom:10px;transition:all .2s;}
+  .card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.12);}
+  .icon-box{width:42px;height:42px;background:#0056f3;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-right:16px;flex-shrink:0;}
+  .icon-box i{color:#fff;font-size:16px;}
+  .card-title{font-size:14px;font-weight:800;color:#111a29;text-transform:uppercase;letter-spacing:.5px;flex:1;}
+  .chevron{width:30px;height:30px;background:#f0f4ff;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .chevron i{color:#0056f3;font-size:10px;}
+  .tutor-card{display:block;text-decoration:none;background:linear-gradient(135deg,#0056f3 0%,#0040c0 100%);border-radius:28px;padding:28px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(0,86,243,.35);margin-bottom:32px;}
+  .tutor-glow{position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:#49e3e7;border-radius:50%;opacity:.15;filter:blur(30px);}
+  .tutor-inner{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;}
+  .tutor-badge{background:rgba(255,255,255,.2);display:inline-block;padding:4px 12px;border-radius:20px;font-size:9px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
+  .tutor-title{font-size:22px;font-weight:900;color:#fff;margin:0;text-transform:uppercase;letter-spacing:-.5px;line-height:1.1;}
+  .tutor-icon-box{width:60px;height:60px;background:#fff;border-radius:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+  .tutor-icon-box i{color:#0056f3;font-size:26px;}
+  .wa-card{display:flex;align-items:center;background:#fff;border-radius:20px;padding:16px 20px;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,.07);border:1.5px solid #eef0f5;margin-bottom:10px;}
+  .wa-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.12);}
+  .wa-icon{width:46px;height:46px;background:#0056f3;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-right:14px;flex-shrink:0;}
+  .wa-icon i{color:#fff;font-size:18px;}
+  .wa-tag{font-size:9px;font-weight:900;color:#0056f3;text-transform:uppercase;letter-spacing:2px;margin-bottom:2px;opacity:.7;}
+  .wa-name{font-size:15px;font-weight:900;color:#111a29;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:3px;}
+  .wa-horario{font-size:10px;font-weight:600;color:#999;}
+  .wa-btn{width:44px;height:44px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .wa-btn i{color:#fff;font-size:22px;}
+  .email-card{display:flex;align-items:center;gap:14px;background:#fff;border-radius:18px;padding:16px 20px;text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1.5px solid #eef0f5;margin-bottom:10px;}
+  .email-card:hover{transform:translateY(-2px);}
+  .email-icon{width:42px;height:42px;background:#e8f4ff;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .email-icon i{color:#0056f3;font-size:16px;}
+  .email-tag{font-size:9px;font-weight:900;color:#0056f3;text-transform:uppercase;letter-spacing:2px;margin-bottom:2px;opacity:.7;}
+  .email-addr{font-size:13px;font-weight:800;color:#111a29;}
+  footer{text-align:center;margin-top:32px;padding-bottom:24px;}
+  .footer-inner{display:inline-flex;align-items:center;gap:10px;}
+  .footer-line{height:1px;width:28px;background:#ddd;}
+  .footer-text{font-size:10px;font-weight:900;color:#bbb;text-transform:uppercase;letter-spacing:3px;margin:0;}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="logo-wrap">
+    <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="60" height="60" rx="14" fill="#1A56F0"/>
+      <polygon points="27,22 27,46 50,34" fill="white"/>
+    </svg>
+    <div>
+      <div class="logo-text-main">onmex</div>
+      <div class="logo-text-sub">Universidad</div>
+    </div>
+  </div>
+  <h1>Canales de <span>Atención</span></h1>
+  <p class="subtitle">Resolvemos tus dudas de forma directa</p>
+</div>
+<div class="accent-bar"></div>
+<div class="container">
+  <div class="section">
+    <p class="section-label">Recursos Académicos</p>
+    <a class="card" href="https://drive.google.com/file/d/1Y26ZaeY6MZXvOGzzqbG3JY9DpXl90QzQ/view?usp=sharing" target="_blank">
+      <div class="icon-box"><i class="fa-solid fa-calendar"></i></div>
+      <span class="card-title">Calendario</span>
+      <div class="chevron"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+    <a class="card" href="https://drive.google.com/file/d/1O-9v9mtWZ_eAAT_X_TKIv5Jw-KnkYXA-/view?usp=sharing" target="_blank">
+      <div class="icon-box"><i class="fa-solid fa-book"></i></div>
+      <span class="card-title">Guía Canvas</span>
+      <div class="chevron"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+    <a class="card" href="https://drive.google.com/file/d/1ldNiHv5DQ2bkU0hYaZRbsoCXCfHoaAgT/view?usp=sharing" target="_blank">
+      <div class="icon-box"><i class="fa-solid fa-lock"></i></div>
+      <span class="card-title">Autenticador</span>
+      <div class="chevron"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+  </div>
+  <a class="tutor-card" href="https://drive.google.com/file/d/13mOgKcFKBkYEdnb415g0BpfVUIM7BHFm/view?usp=sharing" target="_blank">
+    <div class="tutor-glow"></div>
+    <div class="tutor-inner">
+      <div>
+        <div class="tutor-badge">Guía Humbert</div>
+        <h3 class="tutor-title">Tutor Virtual<br/>ONMEX</h3>
+      </div>
+      <div class="tutor-icon-box"><i class="fa-solid fa-robot"></i></div>
+    </div>
+  </a>
+  <div class="section">
+    <p class="section-label">Atención Directa WhatsApp</p>
+    <a class="wa-card" href="https://wa.me/525610607955" target="_blank">
+      <div class="wa-icon"><i class="fa-solid fa-user-tie"></i></div>
+      <div style="flex:1">
+        <div class="wa-tag">Dudas Administrativas</div>
+        <div class="wa-name">Coach Académico</div>
+        <div class="wa-horario">L-V 11:00–20:00 · Sáb 9:00–12:00</div>
+      </div>
+      <div class="wa-btn"><i class="fa-brands fa-whatsapp"></i></div>
+    </a>
+    <a class="wa-card" href="https://wa.me/525610608009" target="_blank">
+      <div class="wa-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div style="flex:1">
+        <div class="wa-tag">Dudas Académicas</div>
+        <div class="wa-name">Tutores</div>
+        <div class="wa-horario">L-V 12:00–21:00 · Sáb 9:00–12:00</div>
+      </div>
+      <div class="wa-btn"><i class="fa-brands fa-whatsapp"></i></div>
+    </a>
+    <a class="wa-card" href="https://wa.me/525610607936" target="_blank">
+      <div class="wa-icon"><i class="fa-solid fa-check-double"></i></div>
+      <div style="flex:1">
+        <div class="wa-tag">Cierre de Ciclo</div>
+        <div class="wa-name">Exámenes Finales</div>
+        <div class="wa-horario">L-V 11:00–20:00 · Sáb 9:00–12:00</div>
+      </div>
+      <div class="wa-btn"><i class="fa-brands fa-whatsapp"></i></div>
+    </a>
+    <a class="wa-card" href="https://wa.me/525658103516" target="_blank">
+      <div class="wa-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+      <div style="flex:1">
+        <div class="wa-tag">Dudas con Pagos</div>
+        <div class="wa-name">Finanzas</div>
+        <div class="wa-horario">L-V 9:00–18:00</div>
+      </div>
+      <div class="wa-btn"><i class="fa-brands fa-whatsapp"></i></div>
+    </a>
+  </div>
+  <div class="section">
+    <a class="email-card" href="/cdn-cgi/l/email-protection#5d3e3233292f323173382e3e32313c2f1d3233303825733025">
+      <div class="email-icon"><i class="fa-solid fa-envelope"></i></div>
+      <div style="flex:1">
+        <div class="email-tag">Documentación Control Escolar</div>
+        <div class="email-addr"><span class="__cf_email__" data-cfemail="31525e5f45435e5d1f5442525e5d5043715e5f5c54491f5c49">[email&#160;protected]</span></div>
+      </div>
+      <div class="chevron"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+    <a class="email-card" href="/cdn-cgi/l/email-protection#8afaf8ebe9fee3e9ebf9cae5e4e7eff2a4e7f2">
+      <div class="email-icon"><i class="fa-solid fa-user-graduate"></i></div>
+      <div style="flex:1">
+        <div class="email-tag">Prácticas Profesionales</div>
+        <div class="email-addr"><span class="__cf_email__" data-cfemail="3d4d4f5c5e49545e5c4e7d5253505845135045">[email&#160;protected]</span></div>
+      </div>
+      <div class="chevron"><i class="fa-solid fa-chevron-right"></i></div>
+    </a>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-line"></div>
+    <p class="footer-text">Educación para cambiarlo todo</p>
+    <div class="footer-line"></div>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
